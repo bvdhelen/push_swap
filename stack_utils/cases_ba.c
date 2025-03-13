@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cases_ba.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/12 21:22:09 by eldiaz-c          #+#    #+#             */
+/*   Updated: 2025/03/13 20:22:19 by eldiaz-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+int	ft_case_rarb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = ft_find_place_a(a, c);
+	if (i < ft_find_index(b, c))
+		i = ft_find_index(b, c);
+	return (i);
+}
+
+int	ft_case_rrarrb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_place_a(a, c))
+		i = ft_lstsize(a) - ft_find_place_a(a, c);
+	if ((i < (ft_lstsize(b) - ft_find_index(b, c))) && ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
+	return (i);
+}
+
+int	ft_case_rarrb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
+	i = ft_find_place_a(a, c) + i;
+	return (i);
+}
+
+int	ft_case_rrarb_a(t_stack *a, t_stack *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_place_a(a, c))
+		i = ft_lstsize(a) - ft_find_place_a(a, c);
+	i = ft_find_index(b, c) + i;
+	return (i);
+}
