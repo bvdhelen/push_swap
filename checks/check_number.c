@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 02:19:09 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:22:41 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 21:57:29 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	space(int c)
 	return (0);
 }
 
+//Función para comprobar si los argumentos son números
+//Comprobar si son números, con signo o espacios
 int	check_number(char **argv, int i, int j)
 {
 	while (argv[i])

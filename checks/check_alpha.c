@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:31:50 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:22:27 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 21:55:50 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
+//Función para comprobar si no son números, ni signos, ni espacios
 void	check_alpha(char **argv)
 {
 	int	i;

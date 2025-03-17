@@ -6,12 +6,14 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:56:31 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:24:54 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 21:53:34 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Función que desplaza los elementos del stack B una posición hacia arriba
+//El primer elemento se convierte en el último
 void	rb(t_stack **b, int j)
 {
 	t_stack	*temp;

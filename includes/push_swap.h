@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 00:01:02 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 22:19:08 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 19:43:06 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,15 +100,5 @@ void		ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 t_stack		**ft_sort_a(t_stack **stack_a, t_stack **stack_b);
 t_stack		*ft_sort_b(t_stack **stack_a);
 void		ft_sort(t_stack **stack_a);
-
-//otras?
-
-//t_stack		*ft_lstlast(t_stack *lst);
-//void		ft_sort_big(t_stack **stack_a);
-//void		ft_check_sub(t_stack **a, t_stack **b, char *line);
-//char		*ft_check(t_stack **a, t_stack **b, char *line);
-//void		ft_check_sub(t_stack **a, t_stack **b, char *line);
-//void		algorithm(int argc, char **argv);
-//void		ft_error_ch(void);
 
 #endif

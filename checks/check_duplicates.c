@@ -6,12 +6,13 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 02:12:04 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:22:36 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 19:38:51 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Función para comprobar si hay números duplicados
 int	check_duplicates(t_stack *a)
 {
 	t_stack	*temp;

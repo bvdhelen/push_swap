@@ -6,12 +6,13 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:28:50 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:23:16 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 21:58:38 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Función para liberar la memoria de un stack
 void	ft_free(t_stack **lst)
 {
 	t_stack	*temp;

@@ -6,12 +6,13 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:39:46 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/13 20:23:35 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/17 22:11:58 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Función que encuentra y devuelve el mayor número en el stack
 int	ft_max(t_stack *a)
 {
 	int	i;

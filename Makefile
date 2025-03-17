@@ -6,7 +6,7 @@
 #    By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 00:01:37 by eldiaz-c          #+#    #+#              #
-#    Updated: 2025/03/13 22:00:14 by eldiaz-c         ###   ########.fr        #
+#    Updated: 2025/03/17 19:05:11 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,21 @@
 NAME = push_swap
 
 # Compilador y banderas de compilación
-CC = gcc
+CC = cc
 RM = rm -f
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g3
 LIBFT_DIR = libft/
+
+# Definir códigos de color
+BLACK = \033[0;30m
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+MAGENTA = \033[0;35m
+CYAN =  \033[0;36m
+WHITE = \033[0;37m
+RESET = \033[0m
 
 # Archivos fuente y archivos objeto
 SRC_1 = ./push_swap.c \
@@ -70,30 +81,109 @@ OBJ_1 = $(SRC_1:.c=.o)
 OBJ_2 = $(SRC_2:.c=.o)
 
 # Archivo de encabezado
+# -L ./libft sirve para decirle donde buscar la biblioteca
+# -lft = libft.a sirve para indicar que biblioteca enlazar
 INCLUDE = -L ./libft -lft
 
 # Regla para crear los archivos objeto (.o)
+# -c indica que se debe commpilar el código sin enlazar (crear solo el .o)
+# $< representa el archivo de entrada (el .c que se está compilando)
+# -o $@ especifica el nombre del archivo de salida que se está generando
 .c.o:
-	$(CC) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 # Regla para compilar push_swap con libft
-$(NAME): $(OBJ_1) $(OBJ_2)
-	make -C $(LIBFT_DIR)
-	$(CC) $(FLAGS) $(OBJ_1) $(OBJ_2) -o $(NAME) $(INCLUDE)
+# -C sirve para cambiar al directorio especificado antes de ejecutar el Makefile
+$(NAME): header $(OBJ_1) $(OBJ_2) header2
+	@make -C $(LIBFT_DIR) --no-print-directory
+	@$(CC) $(FLAGS) $(OBJ_1) $(OBJ_2) -o $(NAME) $(INCLUDE)
+	@echo
+	@echo "$(GREEN)<<< push_swap compiled >>>$(RESET)"
+	@echo
 
 # Regla principal que lo compila todo
-all: $(NAME) $(LIBFT)
+all: header $(NAME) header2 $(LIBFT)
 
 # Eliminar todos los archivos .o y .a
 clean:
-	$(RM) $(OBJ_1) $(OBJ_2) $(NAME)
-	@cd $(LIBFT_DIR) && $(MAKE) clean 
+	@$(RM) $(OBJ_1) $(OBJ_2) */*.o
+	@$(MAKE) clean -C $(LIBFT_DIR) --no-print-directory
+	@echo
+	@echo "$(CYAN)<<< CLEAN COMPLETE >>>$(RESET)"
+	@echo
 
 fclean: clean
-	$(RM) $(NAME)
-	@cd $(LIBFT_DIR) && $(MAKE) fclean
+	@$(RM) $(NAME)
+	@$(MAKE) fclean -C $(LIBFT_DIR) --no-print-directory
+	@echo "$(BLUE)<<< FULL CLEAN COMPLETE >>>$(RESET)"
+	@echo
 
 re: fclean all
+
+# ASCII Art
+header:
+	@echo
+	@echo " $(WHITE)                  _                                "
+	@echo " $(WHITE)  _ __  _   _ ___| |__    _____      ____ _ _ __   "
+	@echo " $(WHITE) | '_ \| | | / __| '_ \  / __\ \ /\ / / _  | '_ \  "
+	@echo " $(WHITE) | |_) | |_| \__ \ | | | \__ \\  V  V / (_| | |_) | "
+	@echo " $(WHITE) | .__/ \__,_|___/_| |_| |___/ \_/\_/ \__,_| .__/  "
+	@echo " $(WHITE) |_|__  _ __ ___  _   _  ___  ___| |_      |_|     "
+	@echo " $(WHITE) | '_ \| '__/ _ \| | | |/ _ \/ __| __|             "
+	@echo " $(WHITE) | |_) | | | (_) | |_| |  __/ (__| |_              "
+	@echo " $(WHITE) | .__/|_|  \___/ \__, |\___|\___|\__|             "
+	@echo " $(WHITE) |_|              |___/                            "
+	@echo " $(MAGENTA) "
+	@echo
+	
+header2:
+	@echo "$(RESET)"
+	@echo "                                                                                                    "
+	@echo "                                                                                                    "
+	@echo "                                       ░ ░░░░░░░░   ░░░░ ░░░░  ░                                    "
+	@echo "                                       ░░░░░░░░░░▒▒▒░░░░░░░░░░░░                                    "
+	@echo "                                    ░░░░▒▓█████████████████▓░░░░ ░░░                                "
+	@echo "                                 ░░░▒███▓▒░░░░░░░░░ ░░░░░░░▓████▓░░░                                "
+	@echo "                               ░░░▓██▓░░░░░░░░          ░ ░░░░░▓███▓░░ ░                            "
+	@echo "                              ░░▓██▒░░░                       ░░░░░▓██▓░░                           "
+	@echo "                           ░░░░▓█▓░░░░                             ░░▒██▓░░                         "
+	@echo "                            ░░░██░░                                 ░░░▒██░░░                       "
+	@echo "                            ░░██░░                                    ░░░▓█▒░░░                     "
+	@echo "                            ░░█▓░                                       ░░██▒░░                     "
+	@echo "                            ░▒█▒░                                       ░ ░██▒░                     "
+	@echo "                           ░░██░░                                          ▒██░                     "
+	@echo "                            ░██░                      ░░░░░░               ░██░░                    "
+	@echo "                            ░██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░              ░▒█▓░░                   "
+	@echo "                            ░██░░░░▒███░░░░░░░░░░░░░░░░░▒███░░             ░░██░░                   "
+	@echo "                           ░░██░░░░░░░░░░▒████████████░░░░░░░░░             ░▒█▒                    "
+	@echo "                           ░░██░░░░░░░░░░░░                                  ░█▓░░                  "
+	@echo "                            ▒█▓░░░░                                          ░██░░                  "
+	@echo "                           ░▒█▓░░                                           ░░██▒░                  "
+	@echo "                           ░▓█░                                              ░▓█▒░                  "
+	@echo "                          ░░█▓░                                             ░░▒██░                  "
+	@echo "                          ░██░░░░                                       ░░ ░ ░░██░                  "
+	@echo "                        ░░▓█▓░░                                      ░░░░░░░█▒░██░                  "
+	@echo "                      ░░░▒██░░░                                     ░░██░░░░██░▓█▒░                 "
+	@echo "                      ░░▒██░░░░                                      ░▒█▒░░░██░░█▓░░░               "
+	@echo "                   ░░░░░██░░░                                        ░░██▒░░▓█▒░▓█░░░               "
+	@echo "                     ░░██░░░                                          ░▒█▓░░▓█░ ▒█▒░░               "
+	@echo "                      ▓█▒░                                           ░░░▓█▓▓██░░░██░░               "
+	@echo "                   ░░░██░░ ░                                          ░░░░▒▒░░░░░██░░               "
+	@echo "                  ░░░▒█▒░░                                              ░░ ░░░  ░██░░░              "
+	@echo "               ░    ░██░░░                                                      ░██░░░              "
+	@echo "               ░░░░░▒█▒░░                                                       ░██░░               "
+	@echo "            ░░░ ░▒▓███░░░░                                                     ░░██░░               "
+	@echo "             ░▓███▓░░░░░░░                                                     ░▒█▒░░               "
+	@echo "            ░▓█▒░░░░░░░░░░░░░                                       ░░░░░ ░░ ░░░██░░░               "
+	@echo "            ░▒█▓░░░░░░░░░░░░░░░░░░░  ░░░░                      ░    ░░░▓▓▓▒░░░░██░░░░               "
+	@echo "             ░▒███▓▓▓████████▓▓░░░░░░░░░░░░ ░░░░░░░    ░░░░░   ░░░░░░██▓▓▓█▓░░██░░░                 "
+	@echo "               ░░░▒▒░░░░░░░░░░▒██████████████████▓▒▒▒▒▒▒▒▒▓▓▓▓█████▓░░░░░░░░░▒█▒░░                  "
+	@echo "                 ░ ░░   ░░    ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▓█▒░░░░░░░░█▓░░░                  "
+	@echo "                                              ░░  ░░░░       ░░░░░░▓█▓░░░░▒███░░░░                  "
+	@echo "                                                             ░░░░░░░░▓█████▒░░░░░                   "
+	@echo "                                                                    ░░░░░░░░                        "
+	@echo "                                                                       ░░░                          "
+	@echo
 
 # Indica que las siguientes reglas no son archivos reales
 .PHONY: all clean fclean re
