@@ -6,13 +6,12 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:14:46 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 22:00:06 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 21:03:04 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Función para convertir un array a int, añadiendo la condición de los límites
 int	ft_atoi2(const char *str)
 {
 	int				mod;

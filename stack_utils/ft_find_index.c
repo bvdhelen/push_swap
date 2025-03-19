@@ -6,13 +6,12 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:45:38 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 22:27:25 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:46:59 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Función que comprueba el índice de un número en el stack
 int	ft_find_index(t_stack *a, int nbr)
 {
 	int	i;

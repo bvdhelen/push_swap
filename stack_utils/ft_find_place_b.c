@@ -6,14 +6,12 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:36:01 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 22:26:12 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:47:07 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Función que encuentra el lugar correcto del nº en el stack B
-//Comprueba qué índice tendrá nbr_push después de haber hecho pb
 int	ft_find_place_b(t_stack *b, int nbr_push)
 {
 	int		i;

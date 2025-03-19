@@ -6,13 +6,12 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:32:57 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 22:00:31 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:46:06 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Función para listar los argumentos en orden
 void	list_args(char **argv, t_stack **stack_a)
 {
 	long	i;

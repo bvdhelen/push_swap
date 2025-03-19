@@ -6,14 +6,12 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:28:41 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 22:02:12 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 21:42:15 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//Función para procesar un argummento que contiene una cadena entre comillas,
-//separar los números y añadirlos al stack A
 t_stack	*sub_process(char **argv)
 {
 	t_stack	*a;
@@ -28,8 +26,6 @@ t_stack	*sub_process(char **argv)
 		return (NULL);
 	while (temp[i])
 		i++;
-	if (i == 1)
-		return (NULL);
 	i = 0;
 	while (temp[i])
 	{

@@ -6,7 +6,7 @@
 #    By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 00:01:37 by eldiaz-c          #+#    #+#              #
-#    Updated: 2025/03/17 19:05:11 by eldiaz-c         ###   ########.fr        #
+#    Updated: 2025/03/18 21:43:24 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ $(NAME): header $(OBJ_1) $(OBJ_2) header2
 	@echo
 
 # Regla principal que lo compila todo
-all: header $(NAME) header2 $(LIBFT)
+all: $(NAME) $(LIBFT)
 
 # Eliminar todos los archivos .o y .a
 clean:

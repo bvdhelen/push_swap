@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:53:49 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 21:52:31 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:45:24 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	rrr_sub(t_stack **b, int j)
 		write(1, "rrr\n", 4);
 }
 
-//Función que desplaza los elementos del stack A y B una posición hacia abajo
-//El último elemento se convierte en el primero
-//rra y rrb
 void	rrr(t_stack **a, t_stack **b, int j)
 {
 	t_stack	*temp;

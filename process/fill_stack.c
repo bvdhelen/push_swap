@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:37:38 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 21:59:13 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:45:58 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_freestr(char **lst)
 	*lst = NULL;
 }
 
-//Función para rellenar el stack A
 t_stack	*fill_stack(char **argv)
 {
 	t_stack	*stack_a;
