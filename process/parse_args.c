@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:40:54 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/18 21:40:28 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:40:10 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*parse_args(int argc, char **argv)
 
 	stack_a = NULL;
 	if (argc < 2)
-		ft_error();
+		ft_error(NULL);
 	else if (argc == 2)
 		stack_a = fill_stack(argv);
 	else

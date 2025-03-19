@@ -6,13 +6,13 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:14:46 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/18 21:03:04 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:38:28 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_atoi2(const char *str)
+int	ft_atoi2(const char *str, t_stack **a)
 {
 	int				mod;
 	long long int	i;
@@ -32,11 +32,11 @@ int	ft_atoi2(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error();
+			ft_error(a);
 		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		ft_error();
+		ft_error(a);
 	return (mod * i);
 }

@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 00:02:05 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/18 21:40:21 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:38:54 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	main(int argc, char **argv)
 		return (1);
 	a = process(argc, argv);
 	if (!a || check_duplicates(a))
-	{
-		ft_free(&a);
-		ft_error();
-	}
+		ft_error(&a);
 	if (!check_order(a))
 		ft_sort(&a);
 	ft_free(&a);

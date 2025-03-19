@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 00:01:02 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/17 19:43:06 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:45:05 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 //Process data
 
-int			ft_atoi2(const char *str);
+int			ft_atoi2(const char *str, t_stack **a);
 void		ft_freestr(char **lst);
 t_stack		*fill_stack(char **argv);
 t_stack		*sub_process(char **argv);
@@ -56,7 +56,7 @@ void		rrr(t_stack **a, t_stack **b, int j);
 //Stack Utils
 
 void		ft_add_back(t_stack **stack, t_stack *stack_new);
-t_stack		*ft_new_node(int content);
+t_stack		*ft_new_node(int content, t_stack **lst);
 t_stack		*ft_lstlast(t_stack *lst);
 int			ft_lstsize(t_stack *lst);
 int			ft_min(t_stack *a);
@@ -77,7 +77,7 @@ int			ft_case_rrarrb_a(t_stack *a, t_stack *b, int c);
 
 void		check_alpha(char **argv);
 void		ft_free(t_stack **lst);
-void		ft_error(void);
+void		ft_error(t_stack **lst);
 int			sign(int c);
 int			digit(int c);
 int			space(int c);

@@ -6,14 +6,16 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:27:13 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/18 20:44:50 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:45:42 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_error(void)
+void	ft_error(t_stack **lst)
 {
+	if (*lst)
+		ft_free(lst);
 	write(2, "Error\n", 6);
 	exit(1);
 }
