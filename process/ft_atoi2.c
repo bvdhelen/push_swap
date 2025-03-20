@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:14:46 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/20 18:47:18 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/20 20:10:03 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ static char	**free_memory(char **result)
 	return (NULL);
 }
 
+static int	ft_issign(const char **str)
+{
+	if (**str == '-')
+	{
+		(*str)++;
+		return (-1);
+	}
+	else if (**str == '+')
+		(*str)++;
+	return (1);
+}
+
 int	ft_atoi2(const char *str, t_stack **a, char **temp)
 {
 	int				mod;
@@ -36,13 +48,7 @@ int	ft_atoi2(const char *str, t_stack **a, char **temp)
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
 		|| *str == '\v' || *str == '\r')
 		str++;
-	if (*str == '-')
-	{
-		mod = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
+	mod = ft_issign(&str);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
