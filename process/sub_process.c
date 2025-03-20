@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:28:41 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/19 17:46:08 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:39:06 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_stack	*sub_process(char **argv)
 	i = 0;
 	while (temp[i])
 	{
-		j = ft_atoi2(temp[i], &a);
+		j = ft_atoi2(temp[i], &a, temp);
 		ft_add_back(&a, ft_new_node(j, &a));
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 00:01:02 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/19 17:45:05 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:40:33 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 //Process data
 
-int			ft_atoi2(const char *str, t_stack **a);
+int			ft_atoi2(const char *str, t_stack **a, char **temp);
 void		ft_freestr(char **lst);
 t_stack		*fill_stack(char **argv);
 t_stack		*sub_process(char **argv);
