@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:14:46 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/03/20 20:10:03 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/04/03 18:51:24 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static char	**free_memory(char **result)
 	int	x;
 
 	x = 0;
+	if (!result)
+		return (NULL);
 	while (result[x] != NULL)
 	{
 		free (result[x]);
@@ -60,6 +62,9 @@ int	ft_atoi2(const char *str, t_stack **a, char **temp)
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+	{
+		free_memory(temp);
 		ft_error(a);
+	}
 	return (mod * i);
 }
